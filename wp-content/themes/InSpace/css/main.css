@@ -745,6 +745,7 @@ div.articles-suivants div.wrapper-hover {
 div.wrapper-hover picture img {
   width: 100%;
   height: 100%;
+  max-height: 300px;
   object-fit: cover;
 }
 section.single-post main header.edito {
@@ -799,14 +800,14 @@ section.single-post main div.articles-suivants p:last-of-type {
 section.single-post.reference main article h4 {
   color: #35a8e0;
 }
-section.single-post blockquote {
+section.single-post blockquote.icone {
   position: relative;
-  color: rgb(0,0,0);
+  color: rgb(10,10,10);
   padding: 1.5625rem 1.25rem 0.5625rem 4.1875rem;
   border-left: 2px solid #35a8e0;
   background: rgba(235, 235, 235, 1);
 }
-section.single-post blockquote::after {
+section.single-post blockquote.icone::after {
   content: '';
   background: url('../img/dialogue.svg');
   background-size: 50px 50px;
@@ -816,13 +817,66 @@ section.single-post blockquote::after {
   top: 33px;
   left: 8px;
 }
+section.single-post blockquote.photo {
+  position: relative;
+  border-left: 2px solid #35a8e0;
+  padding: 1.25rem;
+  background: rgb(235,235,235);
+  color: rgb(10,10,10)
+}
+section.single-post blockquote.photo img {
+  width: 110px;
+  float: left;
+  overflow: auto;
+  margin-right: 20px;
+}
+section.single-post blockquote.photo p:not(:first-of-type) {
+  margin-bottom: 0;
+  margin-top: 1rem;
+}
+section.single-post blockquote.quote {
+  position: relative;
+  width: 290px;
+  margin: 2rem auto;
+  border: 0;
+  padding: 1.8rem;
+  text-align: center;
+}
+section.single-post blockquote > * {
+  margin: 0.5rem 0;
+}
+section.single-post blockquote.quote::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 35px;
+  height: 35px;
+  background: url('../img/quote.svg') no-repeat center center;
+  background-size: 35px;
+}
+section.single-post blockquote.quote::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 35px;
+  height: 35px;
+  background: url('../img/quote.svg') no-repeat center center;
+  background-size: 35px;
+  transform: rotate(180deg);
+}
 @media screen and (max-width: 39.9375em) {
-  section.single-post blockquote {
+  section.single-post blockquote.icone {
     padding-left: 0.875rem;
     padding-right: 0.875rem;
   }
-  section.single-post blockquote:after {
+  section.single-post blockquote.icone::after {
     display: none;
+  }
+  section.single-post blockquote.photo img {
+    float: none;
+    margin-bottom: 1rem;
   }
 }
 /*** SLIDER ***/

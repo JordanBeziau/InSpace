@@ -150,6 +150,42 @@ function pagination($query, $page) {
   endif;
 }
 
+# Ajout du bouton format dans TinyMCE
+function add_theme_mce_buttons($buttons) {
+  array_unshift($buttons, 'styleselect');
+  return $buttons;
+}
+add_filter('mce_buttons_2', 'add_theme_mce_buttons');
+
+# Ajout de style perso dans TinyMCE > Format
+function my_mce_buttons_init( $init_array ) {
+  $style_formats = array(
+    # Chaque array défini 1 style (bouton)
+    array(
+    'title'   => 'Citation icone',
+    'block'   => 'blockquote',
+    'classes' => 'icone',
+    'wrapper' => true,
+    ),
+    array(
+    'title'   => 'Citation photo',
+    'block'   => 'blockquote',
+    'classes' => 'photo',
+    'wrapper' => true,
+    ),
+    array(
+      'title'   => 'Citation guillemets',
+      'block'   => 'blockquote',
+      'classes' => 'quote',
+      'wrapper' => true,
+    ),
+  );
+  # On ajoute nos styles à ceux existants
+  $init_array['style_formats'] = json_encode( $style_formats );
+  return $init_array;
+}
+add_filter( 'tiny_mce_before_init', 'my_mce_buttons_init');
+
 # 404 bug wp pagination
 // function mg_news_pagination_rewrite() {
 //   add_rewrite_rule(get_option('category_base').'/page/?([0-9]{1,})/?$', 'index.php?pagename='.get_option('category_base').'&paged=$matches[1]', 'top');
