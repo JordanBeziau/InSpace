@@ -800,9 +800,11 @@ section.single-post main div.articles-suivants p:last-of-type {
 section.single-post.reference main article h4 {
   color: #35a8e0;
 }
+section.single-post blockquote p {
+  color: rgb(10, 10, 10);
+}
 section.single-post blockquote.icone {
   position: relative;
-  color: rgb(10,10,10);
   padding: 1.5625rem 1.25rem 0.5625rem 4.1875rem;
   border-left: 2px solid #35a8e0;
   background: rgba(235, 235, 235, 1);
@@ -822,7 +824,6 @@ section.single-post blockquote.photo {
   border-left: 2px solid #35a8e0;
   padding: 1.25rem;
   background: rgb(235,235,235);
-  color: rgb(10,10,10)
 }
 section.single-post blockquote.photo img {
   width: 110px;
@@ -884,6 +885,17 @@ section.single-post div.img-text-align > p {
 }
 section.single-post div.img-text-align > *:not(:first-child) {
   width: 80%;
+}
+section.single-post div.icon-text-align {
+  position: relative;
+  overflow: auto;
+  padding: 0 1rem 0 4rem;
+}
+section.single-post div.icon-text-align > *:first-child {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50px;
 }
 @media screen and (max-width: 39.9375em) {
   section.single-post blockquote.icone {

@@ -180,9 +180,15 @@ function my_mce_buttons_init( $init_array ) {
       'wrapper' => true,
     ),
     array(
-      'title'   => 'image + texte alignés',
+      'title'   => 'Portrait + titre alignés',
       'block'   => 'div',
       'classes' => 'img-text-align',
+      'wrapper' => true,
+    ),
+    array(
+      'title'   => 'Icone + texte alignés',
+      'block'   => 'div',
+      'classes' => 'icon-text-align',
       'wrapper' => true,
     ),
   );
