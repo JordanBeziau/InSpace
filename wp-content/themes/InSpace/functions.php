@@ -116,12 +116,12 @@ function register_buttons_editor($buttons) {
 }
 add_filter("mce_buttons", "register_buttons_editor");
 
-# Limiter nombre de caractère titre article (50)
+# Limit title post Char (50)
 function article_max_characters() {
   global $post;
   $title = $post -> post_title;
   if (strlen($title) > 50) :
-    wp_die('Le titre doit faire au maximum 100 caractères.');
+    wp_die('Le titre doit faire au maximum 50 caractères.');
   endif;
 }
 add_action('publish_post', 'article_max_characters');

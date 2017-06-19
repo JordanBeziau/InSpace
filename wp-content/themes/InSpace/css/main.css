@@ -63,6 +63,9 @@ ul.submenu {
 }
 
 /* --- RESPONSIVE NAVBAR --- */
+nav#mobile-menu li.is-submenu-item {
+  padding: 5px 0;
+}
 div.navbar div.responsive-navbar {
   position: relative;
   text-align: center;
@@ -798,7 +801,7 @@ section.single-post.reference main article h4 {
 }
 section.single-post blockquote {
   color: rgb(0,0,0);
-  padding: 1.5625rem 1.25rem 1.5625rem 1.1875rem;
+  padding: 1.5625rem 1.25rem 0.5625rem 1.1875rem;
   border-left: 2px solid #35a8e0;
   background: rgba(235, 235, 235, 1);
 }
