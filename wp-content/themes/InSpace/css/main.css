@@ -800,10 +800,30 @@ section.single-post.reference main article h4 {
   color: #35a8e0;
 }
 section.single-post blockquote {
+  position: relative;
   color: rgb(0,0,0);
-  padding: 1.5625rem 1.25rem 0.5625rem 1.1875rem;
+  padding: 1.5625rem 1.25rem 0.5625rem 4.1875rem;
   border-left: 2px solid #35a8e0;
   background: rgba(235, 235, 235, 1);
+}
+section.single-post blockquote::after {
+  content: '';
+  background: url('../img/dialogue.svg');
+  background-size: 50px 50px;
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  top: 33px;
+  left: 8px;
+}
+@media screen and (max-width: 39.9375em) {
+  section.single-post blockquote {
+    padding-left: 0.875rem;
+    padding-right: 0.875rem;
+  }
+  section.single-post blockquote:after {
+    display: none;
+  }
 }
 /*** SLIDER ***/
 div.orbit.reference {
