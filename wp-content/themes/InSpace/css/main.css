@@ -897,6 +897,9 @@ section.single-post div.icon-text-align > *:first-child {
   left: 0;
   width: 50px;
 }
+section.single-post div.icon-text-align p {
+  margin-bottom: 0;
+}
 @media screen and (max-width: 39.9375em) {
   section.single-post blockquote.icone {
     padding-left: 0.875rem;
