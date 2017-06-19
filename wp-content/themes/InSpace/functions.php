@@ -179,6 +179,12 @@ function my_mce_buttons_init( $init_array ) {
       'classes' => 'quote',
       'wrapper' => true,
     ),
+    array(
+      'title'   => 'image + texte alignés',
+      'block'   => 'div',
+      'classes' => 'img-text-align',
+      'wrapper' => true,
+    ),
   );
   # On ajoute nos styles à ceux existants
   $init_array['style_formats'] = json_encode( $style_formats );

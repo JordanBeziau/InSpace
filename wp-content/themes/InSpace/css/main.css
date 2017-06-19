@@ -836,7 +836,7 @@ section.single-post blockquote.photo p:not(:first-of-type) {
 }
 section.single-post blockquote.quote {
   position: relative;
-  width: 290px;
+  width: 400px;
   margin: 2rem auto;
   border: 0;
   padding: 1.8rem;
@@ -866,6 +866,25 @@ section.single-post blockquote.quote::after {
   background-size: 35px;
   transform: rotate(180deg);
 }
+section.single-post div.img-text-align {
+  display: inline-flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  height: 125px;
+  margin-bottom: 15px;
+  width: 100%;
+}
+section.single-post div.img-text-align img {
+  width: 125px;
+  margin-right: 10px;
+}
+section.single-post div.img-text-align > p {
+  margin-bottom: 0;
+}
+section.single-post div.img-text-align > *:not(:first-child) {
+  width: 80%;
+}
 @media screen and (max-width: 39.9375em) {
   section.single-post blockquote.icone {
     padding-left: 0.875rem;
@@ -877,6 +896,16 @@ section.single-post blockquote.quote::after {
   section.single-post blockquote.photo img {
     float: none;
     margin-bottom: 1rem;
+  }
+  section.single-post blockquote.quote {
+    width: 290px;
+  }
+  section.single-post div.img-text-align {
+    display: block;
+    height: auto;
+  }
+  section.single-post div.img-text-align > p {
+    margin-bottom: 15px;
   }
 }
 /*** SLIDER ***/
