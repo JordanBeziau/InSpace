@@ -1125,6 +1125,23 @@ nav.side-bar div.newsletter input[type='submit']:hover {
     padding: 0 0.625rem;
   }
 }
+/*** Formulaires ***/
+input.valid-input, input.bad-input {
+  padding-right: 5px;
+  transition: all 0.2s;
+}
+#newsletter-form input.valid-input:focus {
+  border-color: #67bf59;
+}
+#newsletter-form input.bad-input:focus {
+  border-color: rgb(230,61,75);
+}
+input.valid-input {
+  border-right: 3px solid #67bf59;
+}
+input.bad-input {
+  border-right: 3px solid rgb(230,61,75);
+}
 
 /***********************************************************
                         SECTION FOOTER

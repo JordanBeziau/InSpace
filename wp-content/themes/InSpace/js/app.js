@@ -67,4 +67,34 @@ document.addEventListener('DOMContentLoaded', function() {
     $('#contact-tel').attr('href', 'tel:' + $('#contact-tel').text());
   }
 
+
+  // Vérification formulaire newsletter
+
+
+  $('.newsletter-form').each(function() {
+    $(this).on('keyup', checkInputFormLive);
+    $(this).on('blur', checkInputFormLive);
+  });
+
+  function checkInputFormLive() {
+    var condition;
+    switch ($(this).attr('name')) {
+      case 'nom':
+      condition = $(this).val().match(/^[a-zA-Zàâéèëêïîôùüç -]{1,60}$/);
+      break;
+      case 'mail':
+      condition = $(this).val().match(/^(([^<>()\[\]\.,;:\s@\"]+(\.[^<>()\[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i);
+      break;
+      case 'societe':
+      condition = $(this).val().length > 0;
+      break;
+      case 'fonction':
+      condition = $(this).val().match(/^[a-zA-Zàâéèëêïîôùüç -]{1,100}$/);
+      break;
+      case 'telephone':
+      condition = $(this).val().match(/^\+?([0-9]{3})\)?[-. ]?([0-9]{4})[-. ]?([0-9]{4})$/) || $(this).val().match(/^\d{10}$/);
+      break;
+    }
+    condition ? $(this).addClass('valid-input').removeClass('bad-input') : $(this).addClass('bad-input').removeClass('valid-input');
+  }
 });
