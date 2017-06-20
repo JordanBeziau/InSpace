@@ -191,6 +191,12 @@ function my_mce_buttons_init( $init_array ) {
       'classes' => 'icon-text-align',
       'wrapper' => true,
     ),
+    array(
+      'title'   => 'Encadré',
+      'block'   => 'div',
+      'classes' => 'encadre',
+      'wrapper' => true,
+    ),
   );
   # On ajoute nos styles à ceux existants
   $init_array['style_formats'] = json_encode( $style_formats );

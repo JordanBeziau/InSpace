@@ -805,7 +805,7 @@ section.single-post blockquote p {
 }
 section.single-post blockquote.icone {
   position: relative;
-  padding: 1.5625rem 1.25rem 0.5625rem 4.1875rem;
+  padding: 1.25rem 1.25rem 0.5625rem 4.1875rem;
   border-left: 2px solid #35a8e0;
   background: rgba(235, 235, 235, 1);
 }
@@ -872,12 +872,12 @@ section.single-post div.img-text-align {
   flex-direction: column;
   flex-wrap: wrap;
   justify-content: flex-end;
-  height: 125px;
+  height: 150px;
   margin-bottom: 15px;
   width: 100%;
 }
 section.single-post div.img-text-align img {
-  width: 125px;
+  width: 100px;
   margin-right: 10px;
 }
 section.single-post div.img-text-align > p {
@@ -900,6 +900,14 @@ section.single-post div.icon-text-align > *:first-child {
 section.single-post div.icon-text-align p {
   margin-bottom: 0;
 }
+section.single-post div.encadre {
+  border: 2px solid rgb(0,78,135);
+  padding: 1.25rem;
+  margin: 2rem 0px;
+}
+section.single-post div.encadre > *:last-child {
+  margin-bottom: 0;
+}
 @media screen and (max-width: 39.9375em) {
   section.single-post blockquote.icone {
     padding-left: 0.875rem;
@@ -918,6 +926,9 @@ section.single-post div.icon-text-align p {
   section.single-post div.img-text-align {
     display: block;
     height: auto;
+  }
+  section.single-post div.img-text-align > *:not(:first-child) {
+    width: 100%;
   }
   section.single-post div.img-text-align > p {
     margin-bottom: 15px;
