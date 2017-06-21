@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the WordPress - 4.8.x package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2017-06-19 19:41:36+0000\n"
+"PO-Revision-Date: 2017-06-20 15:12:11+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -364,7 +364,7 @@ msgstr "Mis à jour !"
 #: wp-includes/script-loader.php:648
 msgctxt "plugin"
 msgid "Updated!"
-msgstr "Mise à jour !"
+msgstr "Mise à jour !"
 
 #. translators: 1: parameter, 2: maximum number
 #: wp-includes/rest-api.php:1122
@@ -2575,13 +2575,13 @@ msgstr "L’installation pour %s a échoué"
 #: wp-includes/script-loader.php:686
 msgctxt "theme"
 msgid "%s installed!"
-msgstr "%s installé !"
+msgstr "%s installé !"
 
 #. translators: %s: Plugin name and version
 #: wp-includes/script-loader.php:684
 msgctxt "plugin"
 msgid "%s installed!"
-msgstr "%s installé !"
+msgstr "%s installé !"
 
 #. translators: %s: Theme name and version
 #: wp-includes/script-loader.php:682
@@ -2713,25 +2713,25 @@ msgstr "Suppression..."
 
 #: wp-includes/script-loader.php:700
 msgid "Caution: These themes may be active on other sites in the network. Are you sure you want to proceed?"
-msgstr "Attention : Ces thèmes peuvent être actifs sur d’autres sites dans le réseau. Voulez vous vraiment faire cela ?"
+msgstr "Attention : Ces thèmes peuvent être actifs sur d’autres sites dans le réseau. Confirmez-vous vouloir vraiment faire cela ?"
 
 #: wp-includes/script-loader.php:699
 msgid "Are you sure you want to delete the selected plugins and their data?"
-msgstr "Voulez vous vraiment supprimer les extensions sélectionnées et leur données ?"
+msgstr "Confirmez-vous la suppression des extensions sélectionnées et de leurs données ?"
 
 #. translators: %s: Plugin name
 #: wp-includes/script-loader.php:698
 msgid "Are you sure you want to delete %s and its data?"
-msgstr "Voulez vous vraiment supprimer %s et ses données ?"
+msgstr "Confirmez-vous la suppression de %s et de ses données ?"
 
 #. translators: %s: Theme name
 #: wp-includes/script-loader.php:696
 msgid "Are you sure you want to delete %s?"
-msgstr "Voulez vous vraiment supprimer %s ?"
+msgstr "Confirmez-vous la suppression de %s ?"
 
 #: wp-includes/script-loader.php:676
 msgid "Install Failed!"
-msgstr "Échec d’installation !"
+msgstr "Échec de l’installation !"
 
 #: wp-includes/script-loader.php:651
 msgid "Update Now"
@@ -4619,15 +4619,15 @@ msgid ""
 msgstr ""
 "Cher/chère USERNAME,\n"
 "\n"
-"Votre nouveau site SITE_NAME a été bien créé à l’adresse :\n"
+"Votre nouveau site SITE_NAME a été bien créé à l’adresse :\n"
 "BLOG_URL\n"
 "\n"
-"Vous pouvez vous connecter au compte administrateur avec les informations suivantes :\n"
-"Identifiant : USERNAME\n"
-"Mot de passe : PASSWORD\n"
-"Connectez-vous ici : BLOG_URLwp-login.php\n"
+"Vous pouvez vous connecter au compte administrateur avec les informations suivantes :\n"
+"Identifiant : USERNAME\n"
+"Mot de passe : PASSWORD\n"
+"Connectez-vous ici : BLOG_URLwp-login.php\n"
 "\n"
-"Nous espérons que vous apprécierez votre nouveau site. Merci !\n"
+"Nous espérons que vous apprécierez votre nouveau site. Merci !\n"
 "\n"
 "--L’équipe de SITE_NAME"
 
@@ -4653,11 +4653,11 @@ msgstr ""
 "Votre nouveau compte a été créé.\n"
 "\n"
 "Vous pouvez vous connecter avec les informations suivantes :\n"
-"Identifiant : USERNAME\n"
-"Mot de passe : PASSWORD\n"
+"Identifiant : USERNAME\n"
+"Mot de passe : PASSWORD\n"
 "LOGINLINK\n"
 "\n"
-"Merci !\n"
+"Merci !\n"
 "\n"
 "--L’équipe de SITE_NAME"
 
@@ -5102,7 +5102,7 @@ msgstr "Ajouter"
 
 #: wp-login.php:870
 msgid "<strong>You have successfully updated WordPress!</strong> Please log back in to see what&#8217;s new."
-msgstr "<strong>WordPress a bien été mis à jour !</strong> Veuillez vous reconnecter pour voir les nouveautés."
+msgstr "<strong>WordPress a bien été mis à jour !</strong> Veuillez vous reconnecter pour voir les nouveautés."
 
 #: wp-includes/media.php:3524
 msgid "Untrash Selected"
@@ -9260,7 +9260,7 @@ msgstr "[%1$s] Commentaire : « %2$s »"
 
 #: wp-includes/ms-load.php:483
 msgid "What do I do now?"
-msgstr "Que dois-je faire maintenant ?"
+msgstr "Que dois-je faire maintenant ?"
 
 #. translators: New user notification email subject. 1: Network name, 2: New
 #. user login
@@ -9914,13 +9914,13 @@ msgstr "Sélectionner une ville"
 #. translators: 1: PHP function name, 2: version number
 #: wp-includes/functions.php:4026
 msgid "%1$s was called with an argument that is <strong>deprecated</strong> since version %2$s with no alternative available."
-msgstr "%1$s est appelé avec un argument qui est <strong>déprécié</strong> depuis la version %2$s, aucune alternative n’est disponible."
+msgstr "%1$s est appelé avec un argument qui est <strong>obsolète</strong> depuis la version %2$s, aucune alternative n’est disponible."
 
 #. translators: 1: PHP function name, 2: version number, 3: optional message
 #. regarding the change
 #: wp-includes/functions.php:4023
 msgid "%1$s was called with an argument that is <strong>deprecated</strong> since version %2$s! %3$s"
-msgstr "%1$s est appelé avec un argument qui est <strong>déprécié</strong> depuis la version %2$s ! %3$s"
+msgstr "%1$s est appelé avec un argument qui est <strong>obsolète</strong> depuis la version %2$s ! %3$s"
 
 #. translators: 1: PHP function name, 2: version number
 #. translators: 1: PHP file name, 2: version number
@@ -9928,7 +9928,7 @@ msgstr "%1$s est appelé avec un argument qui est <strong>déprécié</strong> d
 #: wp-includes/functions.php:3834 wp-includes/functions.php:3962
 #: wp-includes/functions.php:4085
 msgid "%1$s is <strong>deprecated</strong> since version %2$s with no alternative available."
-msgstr "%1$s est <strong>déprécié</strong> depuis la version %2$s, aucune alternative n’est disponible."
+msgstr "%1$s est <strong>obsolète</strong> depuis la version %2$s, aucune alternative n’est disponible."
 
 #. translators: 1: PHP function name, 2: version number, 3: alternative
 #. function name
@@ -9938,7 +9938,7 @@ msgstr "%1$s est <strong>déprécié</strong> depuis la version %2$s, aucune alt
 #: wp-includes/functions.php:3831 wp-includes/functions.php:3959
 #: wp-includes/functions.php:4082
 msgid "%1$s is <strong>deprecated</strong> since version %2$s! Use %3$s instead."
-msgstr "%1$s est <strong>déprécié</strong> depuis la version %2$s ! Utilisez %3$s à la place."
+msgstr "%1$s est <strong>obsolète</strong> depuis la version %2$s ! Utilisez %3$s à la place."
 
 #: wp-includes/functions.php:2739 wp-load.php:92
 msgid "WordPress &rsaquo; Error"
