@@ -6,4 +6,5 @@
   echo $_POST['fonction'];
   echo $_POST['telephone'];
 
+  echo 'ok';
  ?>

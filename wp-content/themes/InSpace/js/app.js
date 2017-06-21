@@ -74,39 +74,60 @@ document.addEventListener('DOMContentLoaded', function() {
     $(this).on('blur', function() {checkInputFormLive($(this))});
   });
 
+  $('#newsletter-form').on('submit', function(event) {
+    event.preventDefault();
+    check = true;
+    $('.newsletter-form').each(function() {
+      checkInputFormLive($(this));
+    });
+    if (check) {
+      // Show loading...
+      const nom = $('#nom').val(),
+            mail = $('#mail').val(),
+            societe = $('#societe').val(),
+            fonction = $('#fonction').val(),
+            telephone = $('#telephone').val();
+
+      const url = $(this).attr('action');
+
+      $.post(url, {
+        nom: nom,
+        mail: mail,
+        societe: societe,
+        fonction: fonction,
+        telephone: telephone
+      }, function(status) {
+        alert(status);
+      });
+    }
+  });
+
   function checkInputFormLive(element) {
     let condition, el;
     element ? el = element : el = $(this);
     switch (el.attr('name')) {
       case 'nom':
-        condition = el.val().match(/^[a-zA-Zàâéèëêïîôùüç -]{1,60}$/);
-        break;
+      condition = el.val().match(/^[a-zA-Zàâéèëêïîôùüç -]{1,60}$/);
+      break;
       case 'mail':
-        condition = el.val().match(/^(([^<>()\[\]\.,;:\s@\"]+(\.[^<>()\[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i);
-        break;
+      condition = el.val().match(/^(([^<>()\[\]\.,;:\s@\"]+(\.[^<>()\[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i);
+      break;
       case 'societe':
-        condition = el.val().length > 0;
-        break;
+      condition = el.val().length > 0;
+      break;
       case 'fonction':
-        condition = el.val().match(/^[a-zA-Zàâéèëêïîôùüç -]{1,100}$/);
-        break;
+      condition = el.val().match(/^[a-zA-Zàâéèëêïîôùüç -]{1,100}$/);
+      break;
       case 'telephone':
-        condition = el.val().match(/^\+?([0-9]{3})\)?[-. ]?([0-9]{4})[-. ]?([0-9]{4})$/) || el.val().match(/^\d{10}$/);
-        break;
+      condition = el.val().match(/^\+?([0-9]{3})\)?[-. ]?([0-9]{4})[-. ]?([0-9]{4})$/) || el.val().match(/^\d{10}$/);
+      break;
     }
     if (condition) {
       el.addClass('valid-input').removeClass('bad-input');
     } else {
       el.addClass('bad-input').removeClass('valid-input');
-      check = false;
+      return check = false;
     }
   }
 
-  $('#newsletter-form').on('submit', function(event) {
-    event.preventDefault();
-    let check = true;
-    $('.newsletter-form').each(function() {
-      checkInputFormLive($(this));
-    });
-  });
 });
