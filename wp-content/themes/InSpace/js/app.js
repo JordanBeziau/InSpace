@@ -68,33 +68,45 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 
 
-  // Vérification formulaire newsletter
-
-
+  // Vérification formulaire newsletters
   $('.newsletter-form').each(function() {
-    $(this).on('keyup', checkInputFormLive);
-    $(this).on('blur', checkInputFormLive);
+    $(this).on('keyup', function() {checkInputFormLive($(this))});
+    $(this).on('blur', function() {checkInputFormLive($(this))});
   });
 
-  function checkInputFormLive() {
-    var condition;
-    switch ($(this).attr('name')) {
+  function checkInputFormLive(element) {
+    let condition, el;
+    element ? el = element : el = $(this);
+    switch (el.attr('name')) {
       case 'nom':
-      condition = $(this).val().match(/^[a-zA-Zàâéèëêïîôùüç -]{1,60}$/);
-      break;
+        condition = el.val().match(/^[a-zA-Zàâéèëêïîôùüç -]{1,60}$/);
+        break;
       case 'mail':
-      condition = $(this).val().match(/^(([^<>()\[\]\.,;:\s@\"]+(\.[^<>()\[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i);
-      break;
+        condition = el.val().match(/^(([^<>()\[\]\.,;:\s@\"]+(\.[^<>()\[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i);
+        break;
       case 'societe':
-      condition = $(this).val().length > 0;
-      break;
+        condition = el.val().length > 0;
+        break;
       case 'fonction':
-      condition = $(this).val().match(/^[a-zA-Zàâéèëêïîôùüç -]{1,100}$/);
-      break;
+        condition = el.val().match(/^[a-zA-Zàâéèëêïîôùüç -]{1,100}$/);
+        break;
       case 'telephone':
-      condition = $(this).val().match(/^\+?([0-9]{3})\)?[-. ]?([0-9]{4})[-. ]?([0-9]{4})$/) || $(this).val().match(/^\d{10}$/);
-      break;
+        condition = el.val().match(/^\+?([0-9]{3})\)?[-. ]?([0-9]{4})[-. ]?([0-9]{4})$/) || el.val().match(/^\d{10}$/);
+        break;
     }
-    condition ? $(this).addClass('valid-input').removeClass('bad-input') : $(this).addClass('bad-input').removeClass('valid-input');
+    if (condition) {
+      el.addClass('valid-input').removeClass('bad-input');
+    } else {
+      el.addClass('bad-input').removeClass('valid-input');
+      check = false;
+    }
   }
+
+  $('#newsletter-form').on('submit', function(event) {
+    event.preventDefault();
+    let check = true;
+    $('.newsletter-form').each(function() {
+      checkInputFormLive($(this));
+    });
+  });
 });
