@@ -80,7 +80,7 @@ document.addEventListener('DOMContentLoaded', function() {
     $('.newsletter-form').each(function() {
       checkInputFormLive($(this));
     });
-    //if (check) {
+    if (check) {
       // Show loading...
       const nom = $('#nom').val(),
             mail = $('#mail').val(),
@@ -97,9 +97,13 @@ document.addEventListener('DOMContentLoaded', function() {
         fonction: fonction,
         telephone: telephone
       }, function(status) {
-        alert(status);
+        if (status == 'success') {
+          infoBox('Merci '+nom+', votre abonnement à la newsletter a bien été pris en compte !');
+        } else {
+          infoBox(nom+', votre abonnement n\'a pas fonctionné. Vérifiez si les champs sont valides sinon merci de retenter ultérieurement.');
+        }
       });
-    //}
+    }
   });
 
   function checkInputFormLive(element) {
@@ -128,6 +132,35 @@ document.addEventListener('DOMContentLoaded', function() {
       el.addClass('bad-input').removeClass('valid-input');
       return check = false;
     }
+  }
+
+  function infoBox(message) {
+    // créer la div
+    let box = '<div class="info-box"><p>' + message + '</p><div class="close-info-box">x</div></div>';
+    // apparition de la div
+    $('body').append(box);
+    $('.info-box').fadeIn('fast');
+    // gérer la fermeture
+    boxDie = setTimeout(infoBoxDie, 5000);
+    // dispartition
+    $('.close-info-box').on('click', () => {
+      clearTimeout(boxDie);
+      infoBoxDie();
+    });
+    // gérer hover
+    $('.info-box').on('mouseover', () => {
+      console.log('event');
+      clearTimeout(boxDie);
+      boxDie = setTimeout(infoBoxDie, 5000);
+    });
+
+    function infoBoxDie() {
+      $('.info-box').fadeOut();
+      setTimeout(() => {
+        $('.info-box').remove();
+      }, 400);
+    }
+
   }
 
 });

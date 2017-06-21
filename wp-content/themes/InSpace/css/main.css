@@ -1142,6 +1142,27 @@ input.valid-input {
 input.bad-input {
   border-right: 3px solid rgb(230,61,75);
 }
+div.info-box {
+  position: fixed;
+  width: 250px;
+  bottom: 10px;
+  right: 10px;
+  padding: 1.25rem;
+  background: rgb(235,235,235);
+  border-top: 2px solid #35a8e0;
+}
+div.info-box p {
+  margin: 0;
+}
+div.close-info-box {
+  position: absolute;
+  top: 0;
+  right: 10px;
+  cursor: pointer;
+  font-size: 1.5rem;
+  line-height: 1;
+  color: rgb(100,100,100);
+}
 
 /***********************************************************
                         SECTION FOOTER
