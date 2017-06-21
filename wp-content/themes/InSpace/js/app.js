@@ -80,7 +80,7 @@ document.addEventListener('DOMContentLoaded', function() {
     $('.newsletter-form').each(function() {
       checkInputFormLive($(this));
     });
-    if (check) {
+    //if (check) {
       // Show loading...
       const nom = $('#nom').val(),
             mail = $('#mail').val(),
@@ -99,7 +99,7 @@ document.addEventListener('DOMContentLoaded', function() {
       }, function(status) {
         alert(status);
       });
-    }
+    //}
   });
 
   function checkInputFormLive(element) {
