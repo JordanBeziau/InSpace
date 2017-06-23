@@ -103,6 +103,8 @@ document.addEventListener('DOMContentLoaded', function() {
           infoBox(nom+', votre abonnement n\'a pas fonctionné. Vérifiez si les champs sont valides sinon merci de retenter ultérieurement.');
         }
       });
+    } else {
+      infoBox('Veuillez remplir les champs correctement s.v.p.');
     }
   });
 
@@ -141,7 +143,7 @@ document.addEventListener('DOMContentLoaded', function() {
     $('body').append(box);
     $('.info-box').fadeIn('fast');
     // gérer la fermeture
-    boxDie = setTimeout(infoBoxDie, 5000);
+    boxDie = setTimeout(infoBoxDie, 10000);
     // dispartition
     $('.close-info-box').on('click', () => {
       clearTimeout(boxDie);
@@ -151,7 +153,7 @@ document.addEventListener('DOMContentLoaded', function() {
     $('.info-box').on('mouseover', () => {
       console.log('event');
       clearTimeout(boxDie);
-      boxDie = setTimeout(infoBoxDie, 5000);
+      boxDie = setTimeout(infoBoxDie, 10000);
     });
 
     function infoBoxDie() {

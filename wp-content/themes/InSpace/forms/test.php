@@ -26,6 +26,11 @@
 
       $file = '../csv/newsletter.csv';
 
+      header('Content-Type: text/csv');
+      header('Content-Disposition: attachment; filename='. $file);
+      header('Pragma: no-cache');
+      header("Expires: 0");
+
       if (!file_exists($file)) :
         $source = fopen($file, 'w');
         fputcsv($source, array('nom', 'mail', 'societe', 'fonction', 'telephone'));
